@@ -499,8 +499,14 @@ up ()
 	cd $d
 }
 # Install all needed support files for this bashrc
-install_bashrc_support () {
-	echo Working on it.
+init_bashrc () {
+	cd ~;
+	git clone git@github.com:tehmike6/my-bashrc.git;
+	mv my-bashrc .my-bashrc;
+	cd .my-bashrc;
+	sj my-bash
+	./update;
+	cd ~;
 }
 # Output in all subdirectory files that have git changes
 gitChanges() {
