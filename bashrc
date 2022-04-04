@@ -36,6 +36,7 @@ so=01;35:
 ex=01;91:
 *.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.gz=01;31:*.bz2=01;31:*.deb=01;31:*.jar=01;31:
 *.md=01;40;95:
+*.xlsx=04;40;32:*.csv=04;40;32:
 *Makefile=04;40;91:
 *.txt=01;40;96:
 " | tr -d '\n'`;
@@ -427,7 +428,7 @@ alias l.='ls -d .* --color=auto'
 # Write cls instead of clear
 alias cls="clear"
 # Clear screen and ls
-alias cl="cls;ls -CF;"
+alias cl="cls;echo Current Directory:;echo;ls -CF;"
 # Count files in a folder
 alias count='find . -type f | wc -l'
 # Remove directory
