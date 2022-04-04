@@ -506,6 +506,11 @@ install_bashrc_support () {
 gitChanges() {
 	find . -type d -name '.git' | while read dir ; do sh -c "cd $dir/../ && echo \"\nGIT STATUS IN ${dir//\.git/}\" && git status -s" ; done | tee gitStatus.txt
 }
+# Create directory and go to it
+take() {
+	mkdir $1;
+	cd $1;
+}
 # ------------------------------------------
 # -----------End Common Functions-----------
 
