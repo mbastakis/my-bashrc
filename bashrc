@@ -520,6 +520,22 @@ take() {
 	mkdir $1;
 	cd $1;
 }
+# Create a venv
+venv() {
+	mkdir -p ~/.virtualenvs
+	
+	python3 -m venv ~/.virtualenvs/$1
+}
+# Activate python environment
+activate() {
+	source ~/.virtualenvs/$1/bin/activate
+}
+venvlist() {
+	ls ~/.virtualenvs/
+}
+venvremove() {
+	sudo rm -rf ~/.virtualenvs/$1
+}
 # ------------------------------------------
 # -----------End Common Functions-----------
 
