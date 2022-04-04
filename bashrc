@@ -508,7 +508,7 @@ gitChanges() {
 	find . -type d -name '.git' | while read dir ; do sh -c "cd $dir/../ && echo \"\nGIT STATUS IN ${dir//\.git/}\" && git status -s" ; done | tee gitStatus.txt
 }
 # Git add all, commit and push
-gitp() {
+gitall() {
 	echo Write commit message: 
 	read commitMSG
 	git add .
