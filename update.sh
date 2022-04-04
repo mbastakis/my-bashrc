@@ -1,11 +1,6 @@
 #!/bin/bash
 
-rm ~/bash-repo/bashrc
-cp ~/.bashrc ~/bash-repo/bashrc
+rm ~/.bashrc
+cp ~/.my-bashrc/bashrc ~/.bashrc
 
-echo Write commit message:
-read commitMSG
-
-git add .
-git commit -m "$commitMSG"
-git push
+source ~/.bashrc;
