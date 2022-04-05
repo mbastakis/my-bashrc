@@ -233,8 +233,8 @@ prompt() {
 			export leftBrack="";
 			export rightBrack="";
 		else
-			export leftBrack="\[\e[31m\][\[\e[m\]";
-			export rightBrack="\[\e[31m\]]\[\e[m\]";
+			export leftBrack="\[\e[33m\][\[\e[m\]";
+			export rightBrack="\[\e[33m\]]\[\e[m\]";
 			export isBactive="true";
 		fi
 		finalizePrompt
