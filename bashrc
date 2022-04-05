@@ -233,8 +233,8 @@ prompt() {
 			export leftBrack="";
 			export rightBrack="";
 		else
-			export leftBrack="\[\e[31m\][";
-			export rightBrack="\[\e[31m\]]";
+			export leftBrack="\[\e[31m\][\[\e[m\]";
+			export rightBrack="\[\e[31m\]]\[\e[m\]";
 			export isBactive="true";
 		fi
 		finalizePrompt
@@ -288,6 +288,7 @@ prompt() {
 		echo $isTactive > ~/.promptcfg/isTactive;
 		echo $isTSactive > ~/.promptcfg/isTSactive;
 		echo $isUactive > ~/.promptcfg/isUactive;
+		echo $isBactive > ~/.promptcfg/isBactive;
 		echo $symbolPath > ~/.promptcfg/symbolPath;
 		echo $activePath > ~/.promptcfg/activePath;
 	elif [ "$1" = "load" ]; then
@@ -310,6 +311,7 @@ prompt() {
 		export activateT=$(head -n 1 ~/.promptcfg/isTactive);
 		export activateTS=$(head -n 1 ~/.promptcfg/isTSactive);
 		export activateU=$(head -n 1 ~/.promptcfg/isUactive);
+		export activateB=$(head -n 1 ~/.promptcfg/isBactive);
 		export activateSymbol=$(head -n 1 ~/.promptcfg/symbolPath);
 		export activePath=$(head -n 1 ~/.promptcfg/activePath);
 
@@ -327,6 +329,9 @@ prompt() {
 		fi
 		if [ "$activateTS" = "true" ]; then
 			prompt ts;
+		fi
+		if [ "$activateB" = "true" ]; then
+			prompt b;
 		fi
 		if [ "$activateU" = "true" ]; then
 			prompt u;
@@ -505,7 +510,6 @@ init_bashrc () {
 	mv my-bashrc .my-bashrc;
 	cd .my-bashrc;
 	sj my-bash
-	./update;
 	cd ~;
 }
 # Output in all subdirectory files that have git changes
