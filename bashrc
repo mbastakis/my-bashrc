@@ -131,6 +131,8 @@ export clown=" 🤡 "
 export beer=" 🍺 "
 # Git
 export gitp="\[\e[31m\]\`parse_git_branch\`\[\e[m\]"
+# Python Environment
+# export pythonEnv=""
 # Initialization of prompt
 initPrompt() {
 	export isGactive="false";
@@ -157,7 +159,7 @@ resetPrompt() {
 }
 # Finalize prompt
 finalizePrompt() {
-	export PS1="$newLineStart$timePath$leftBrack$usernamePath$optionalSpace$promptPath$gitPath$rightBrack$newLine$symbolPath";
+	export PS1="$newLineStart$timePath$leftBrack$usernamePath$optionalSpace$promptPath$gitPath$rightBrack$newLine$pythonEnv$symbolPath";
 }
 # Changes the prompt of the shell
 prompt() {
@@ -538,6 +540,14 @@ venv() {
 # Activate python environment
 activate() {
 	source ~/.virtualenvs/$1/bin/activate
+	export env=`basename $VIRTUAL_ENV`
+	export pythonEnv='\[\e[93m\]($env)\[\e[m\]'
+	finalizePrompt
+}
+deact() {
+	deactivate;
+	export pythonEnv=''
+	finalizePrompt
 }
 venvlist() {
 	ls ~/.virtualenvs/
