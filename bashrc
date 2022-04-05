@@ -6,6 +6,8 @@
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=500
 HISTFILESIZE=10000
+# Add time and date to history
+HISTTIMEFORMAT="%F %T "
 # Don't put duplicate lines in the history and do not add lines that start with a space
 export HISTCONTROL=erasedups:ignoredups:ignorespace
 # Check the window size after each command and, if necessary, update the values of LINES and COLUMNS
@@ -53,6 +55,37 @@ export LESS_TERMCAP_us=$'\E[01;32m'
 # ------------------End Bashrc Commands-------------------
 # --------------------------------------------------------
 
+
+# -----------------------Bash Colors-----------------------
+# ---------------------------------------------------------
+blk='\[\033[01;30m\]'   # Black
+red='\[\033[01;31m\]'   # Red
+grn='\[\033[01;32m\]'   # Green
+ylw='\[\033[01;33m\]'   # Yellow
+blu='\[\033[01;34m\]'   # Blue
+pur='\[\033[01;35m\]'   # Purple
+cyn='\[\033[01;36m\]'   # Cyan
+wht='\[\033[01;37m\]'   # White
+clr='\[\033[00m\]'      # Reset
+# ---------------------End Bash Colors---------------------
+# ---------------------------------------------------------
+
+# ----------------------Calendar---------------------------
+# ---------------------------------------------------------
+alias jan='cal -m 01'
+alias feb='cal -m 02'
+alias mar='cal -m 03'
+alias apr='cal -m 04'
+alias may='cal -m 05'
+alias jun='cal -m 06'
+alias jul='cal -m 07'
+alias aug='cal -m 08'
+alias sep='cal -m 09'
+alias oct='cal -m 10'
+alias nov='cal -m 11'
+alias dec='cal -m 12'
+# -------------------End Calendar--------------------------
+# ---------------------------------------------------------
 
 # ------------------Needed Git Functions------------------
 # --------------------------------------------------------
