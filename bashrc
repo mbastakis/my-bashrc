@@ -475,6 +475,10 @@ alias cl="cls;echo Current Directory:;echo;ls -CF;"
 alias count='find . -type f | wc -l'
 # Remove directory
 alias rmd='/bin/rm --recursive --force --verbose '
+# Git alliases
+alias ga='git add';
+alias gc='git commit -m';
+alias gp='git push';
 # ------------------------------------------
 # ------------End Common Aliases------------
 
