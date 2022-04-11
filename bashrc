@@ -51,10 +51,8 @@ export LESS_TERMCAP_se=$'\E[0m'
 export LESS_TERMCAP_so=$'\E[01;44;33m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
-
 # ------------------End Bashrc Commands-------------------
 # --------------------------------------------------------
-
 
 # -----------------------Bash Colors-----------------------
 # ---------------------------------------------------------
@@ -136,7 +134,6 @@ function parse_git_dirty {
 }
 # ----------------End Needed Git Functions ---------------
 # --------------------------------------------------------
-
 
 # ---------------Shell Prompt---------------
 # ------------------------------------------
@@ -423,8 +420,8 @@ alias ipi="hostname -I | awk '{print $1}'"
 # External IP address
 alias ipe='curl ipinfo.io/ip'
 # Reloads shell with new bashrc
-alias reload='source ~/.bashrc;'
-alias r='reload'
+alias reload='source ~/.bashrc';
+alias r='source ~/.bashrc';
 # Opens bashrc
 alias bashrc='code ~/.bashrc;'
 # Opens current dir with nautilus
@@ -546,6 +543,7 @@ init_bashrc () {
 	cd .my-bashrc;
 	sj my-bash
 	cd ~;
+	echo "Don't forget to update your bashrc using: ./.my-bashrc/update.sh";
 }
 # Output in all subdirectory files that have git changes
 gitChanges() {
