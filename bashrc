@@ -407,6 +407,7 @@ prompt() {
 		echo "        	11 == 🍺"
 		echo "	save -> Saves your current prompt and makes it your default."
 		echo "	load -> Loads your default prompt."
+		echo "	hide -> Let's you change the path of your prompt."
 	else
 		echo "The option you are trying to use does not exist. Try prompt h to see all prompt functionalities.";
 	fi
