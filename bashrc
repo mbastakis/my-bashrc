@@ -375,6 +375,11 @@ prompt() {
 		fi
 		export symbolPath=" $activateSymbol ";
 		finalizePrompt;
+	elif [ "$1" = "hide" ]; then
+		echo Set custom path: 
+		read customPath;
+		export promptPath="$grn$customPath$clr";
+		finalizePrompt;
 	elif [ "$1" = "h" ]; then
 		echo "Options for the prompt:"
 		echo "	n  -> Toggle newline at the end of prompt."
