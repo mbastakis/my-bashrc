@@ -664,9 +664,10 @@ sj () {
 # Jump to path that is maped with the variable name of your first argument.
 j () {
     jumpPath=$(< ~/.jumpcfg/$1);
-    if [ -z "$jumpPath" ]
-    then
-        echo "File not found";
+    if [ -z "$jumpPath" ];then
+        echo "File not found.";
+	elif [ ! -d "$jumpPath" ]; then
+		echo "The directory no longer exists."
     else
         echo "Jumping to" $jumpPath;
         cd $jumpPath;
