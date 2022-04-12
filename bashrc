@@ -475,10 +475,6 @@ alias cl="cls;echo Current Directory:;echo;ls -CF;"
 alias count='find . -type f | wc -l'
 # Remove directory
 alias rmd='/bin/rm --recursive --force --verbose '
-# Git alliases
-alias ga='git add';
-alias gc='git commit -m';
-alias gp='git push';
 # ------------------------------------------
 # ------------End Common Aliases------------
 
@@ -562,10 +558,51 @@ gitChanges() {
 # Git add all, commit and push
 gitall() {
 	echo Write commit message: 
-	read commitMSG
-	git add .
-	git commit -m "$commitMSG"
+	read commitMSG;
+	git add .;
+	git commit -m "$commitMSG";
 	git push
+}
+# Git add, you can use it wherever you are in the repo.
+ga() {
+	repoRoot=`git rev-parse --show-toplevel`;
+	currentDir=`pwd`;
+	cd $repoRoot > /dev/null;
+	if [ -z $1 ]; then
+		git add .;
+	else
+		git add $1;
+	fi
+	cd $currentDir > /dev/null;
+}
+# Git commit, you can use it wherever you are in the repo.
+gc() {
+	repoRoot=`git rev-parse --show-toplevel`;
+	currentDir=`pwd`;
+	cd $repoRoot > /dev/null;
+	if [ -z $1 ]; then
+		echo "Write a commit message: "
+		read commitMsg;
+		git commit -m "$commitMsg"
+	else
+		git commit -m $1;
+	fi
+	cd $currentDir > /dev/null;
+}
+# Git Push, you can use it wherever you are in the repo.
+gp() {
+	repoRoot=`git rev-parse --show-toplevel`;
+	currentDir=`pwd`;
+	cd $repoRoot > /dev/null;
+	git push $1 $2;
+	cd $currentDir > /dev/null;
+}
+gs() {
+	repoRoot=`git rev-parse --show-toplevel`;
+	currentDir=`pwd`;
+	cd $repoRoot > /dev/null;
+	git status;
+	cd $currentDir > /dev/null;
 }
 # Create directory and go to it
 take() {
