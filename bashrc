@@ -1,6 +1,12 @@
 # ----------------------My Bashrc-------------------------
 # --------------------------------------------------------
 
+# ----------------------Temporary-------------------------
+# --------------------------------------------------------
+
+# --------------------End Temporary-----------------------
+# --------------------------------------------------------
+
 # --------------------Bashrc Commands---------------------
 # --------------------------------------------------------
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
@@ -475,6 +481,8 @@ alias cl="cls;echo Current Directory:;echo;ls -CF;"
 alias count='find . -type f | wc -l'
 # Remove directory
 alias rmd='/bin/rm --recursive --force --verbose '
+# Make grep work.
+alias grep='/bin/grep'
 # ------------------------------------------
 # ------------End Common Aliases------------
 
