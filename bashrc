@@ -532,7 +532,7 @@ ftext ()
 	# -n causes line number to be printed
 	# optional: -F treat search term as a literal, not a regular expression
 	# optional: -l only print filenames and not the matching lines ex. grep -irl "$1" *
-	grep -iIHrn --color=always "$1" . | less -r
+	/usr/bin/grep -IHrn --color=always "$1" . | less -r
 }
 # Goes up a specified number of directories  (i.e. up 4)
 up ()
@@ -641,9 +641,13 @@ venvlist() {
 venvremove() {
 	sudo rm -rf ~/.virtualenvs/$1
 }
+# Copy output of command to clipboard.
+co() {
+	export commandOuptut=$("$@");
+	echo $commandOuptut | xclip -selection clipboard
+}
 # ------------------------------------------
 # -----------End Common Functions-----------
-
 
 # ---------------Set Home---------------
 # --------------------------------------
