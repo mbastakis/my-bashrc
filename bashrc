@@ -339,6 +339,7 @@ prompt() {
 			prompt t;
 			prompt fp;
 			prompt s 1;
+			prompt u;
 			prompt save;
 		fi
 

@@ -1,0 +1,9 @@
+# Add these lines at the bottom in the provisioning to install custom terminal
+
+apt-get install -y git
+ssh-keyscan github.com >> ~/.ssh/known_hosts
+git clone https://github.com/mbastakis/my-bashrc.git ~/.my-bashrc
+cp ~/.my-bashrc/bashrc ~/.my-bashrc.d
+echo "source ~/.my-bashrc.d" >> ~/.bashrc
+echo "source ~/.my-bashrc.d" >> /home/vagrant/.bashrc
+cp ~/.my-bashrc/bashrc /home/vagrant/.my-bashrc.d
